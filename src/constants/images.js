@@ -23,7 +23,8 @@ import about02 from '../assets/about02.png';
 import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
 
-import profile from '../assets/profile.png';
+import profile from '../assets/profile-img.png';
+//import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 
@@ -35,9 +36,22 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import azure from "../assets/azure.png";
+import react1 from "../assets/react1.png";
+import sql from "../assets/sql.png";
+import AZ900 from "../assets/AZ900.png";
+import DP900 from "../assets/AZ900.png";
+
+
+
 const Image= {
+  azure,
+  AZ900,
+  DP900,
   email,
+  react1,
   mobile,
+  sql,
   api,
   cpp,
   css,
