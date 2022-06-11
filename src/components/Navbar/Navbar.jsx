@@ -14,7 +14,7 @@ export default function Navbar() {
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "contact", "work", "skills", "testimonials"].map(
+        {["home", "about", "contact", "work", "skills"].map(
           (item) => (
             <li className="app__flex p-text" key={`link-${item}`}>
               <div />
@@ -39,7 +39,7 @@ export default function Navbar() {
                 "contact",
                 "work",
                 "skills",
-                "testimonials",
+                
               ].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggel(false)}>
