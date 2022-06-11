@@ -26,7 +26,7 @@ export default function About() {
   return (
     <>
       <h2 className="head-text">
-        I Know that <span>Good Design</span>
+        I Know that <span>Good Dev</span>
         <br />
         means <span>Good Business</span>
       </h2>
