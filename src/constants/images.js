@@ -40,7 +40,7 @@ import azure from "../assets/azure.png";
 import react1 from "../assets/react1.png";
 import sql from "../assets/sql.png";
 import AZ900 from "../assets/AZ900.png";
-import DP900 from "../assets/AZ900.png";
+import DP900 from "../assets/DP900.png";
 
 
 
