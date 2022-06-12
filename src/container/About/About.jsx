@@ -1,28 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import "./About.scss";
 import { images } from "../../constants";
 
-const abouts = [
-  {
-    title: "Software Developer",
-    description: "I am good Software Developer",
-    imgURL: images.about01,
-  },
-  {
-    title: "FullStack Developer",
-    description: "I am good FullStack Developer",
-    imgURL: images.about02,
-  },
-  {
-    title: "Azure Developer",
-    description: "I am good Azure Developer",
-    imgURL: images.about03,
-  },
-];
+import { urlFor, client } from "../../client";
+
 
 export default function About() {
+ 
+  const [abouts, setAbouts] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+    client.fetch(query).then((data) => {
+      setAbouts(data);
+    });
+  }, []);
+
   return (
     <>
       <h2 className="head-text">
