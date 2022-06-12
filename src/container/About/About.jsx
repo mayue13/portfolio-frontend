@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import "./About.scss";
-import { images } from "../../constants";
+//import { images } from "../../constants";
 
 import { urlFor, client } from "../../client";
+import { AppWrap } from '../../wrapper/index';
 
 
-export default function About() {
+function About() {
  
   const [abouts, setAbouts] = useState([]);
 
@@ -48,3 +49,6 @@ export default function About() {
     </>
   );
 }
+
+
+export default AppWrap(About,'about'); 

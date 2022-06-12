@@ -14,7 +14,7 @@ export default function Navbar() {
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "contact", "work", "skills"].map(
+        {["home", "about", "work", "skills", "testimonials", "contact"].map(
           (item) => (
             <li className="app__flex p-text" key={`link-${item}`}>
               <div />
@@ -32,14 +32,14 @@ export default function Navbar() {
             transition={{ duration: 0.85, ease: "easeOut" }}
           >
             <HiX onClick={() => setToggel(false)} />
-            <ul >
+            <ul>
               {[
                 "home",
                 "about",
-                "contact",
                 "work",
                 "skills",
-                
+                "testimonials",
+                "contact"
               ].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggel(false)}>

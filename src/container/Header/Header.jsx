@@ -5,6 +5,8 @@ import { images } from "../../constants/index";
 
 import "./Header.scss";
 
+import { AppWrap } from "../../wrapper/index";
+
 const scaleVariants = {
   whileInView: {
     scale: [0, 1],
@@ -16,9 +18,9 @@ const scaleVariants = {
   },
 };
 
-export default function Header() {
+function Header() {
   return (
-    <div id="home" className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duaration: 0.5 }}
@@ -45,10 +47,10 @@ export default function Header() {
         transition={{ duaration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-         <img src={images.profile} alt="profile_bg"/> 
+        <img src={images.profile} alt="profile_bg" />
         <motion.img
           whileInView={{ scale: [0, 1] }}
-          transition={{ duaration: 1, ease: 'easeInOut' }}
+          transition={{ duaration: 1, ease: "easeInOut" }}
           className="overlay_circle"
           src={images.circle}
           alt="profie_circle"
@@ -69,3 +71,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default AppWrap(Header, "home");
