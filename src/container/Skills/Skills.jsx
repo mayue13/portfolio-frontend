@@ -2,8 +2,10 @@ import React from 'react'
 
 import './Skills.scss'
 
-export default function Skills() {
+ function Skills() {
   return (
     <div></div>
   )
 }
+
+export default AppWrap()
