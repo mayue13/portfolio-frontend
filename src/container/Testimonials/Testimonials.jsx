@@ -40,14 +40,14 @@ function Testimonials() {
               src={urlFor(testMo.imgurl)}
               alt={testimonials[currentIndex].name}
             />
-            <div className="app__testimonials-content">
+            <div className="app__testimonial-content">
+              <p className="p-text">{testMo.feedback}</p>
               <div>
                 <h4 className="bold-text"> {testMo.name}</h4>
                 <h5 className="p-text">
                   {testMo.designation} @{testMo.company}
                 </h5>
               </div>
-              <p className="p-text">{testMo.feedback}</p>
             </div>
           </div>
 
