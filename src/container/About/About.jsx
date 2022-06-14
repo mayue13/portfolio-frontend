@@ -5,7 +5,7 @@ import "./About.scss";
 //import { images } from "../../constants";
 
 import { urlFor, client } from "../../client";
-import { AppWrap } from '../../wrapper/index';
+import { AppWrap,MotionWrap } from '../../wrapper/index';
 
 
 function About() {
@@ -50,5 +50,9 @@ function About() {
   );
 }
 
-
-export default AppWrap(About,'about'); 
+//export default AppWrap(About,'about');
+export default AppWrap(
+  MotionWrap(About,'app__about'),
+  'about',
+  "app__whitebg"
+  ); 
