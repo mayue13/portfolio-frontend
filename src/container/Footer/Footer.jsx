@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import { motion } from "framer-motion";
 import { send } from 'emailjs-com';
 
 import {  client } from "../../client";
