@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+//import { motion } from "framer-motion";
+import { send } from 'emailjs-com';
 
-import { urlFor, client } from "../../client";
+import {  client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
-import { images } from "../../constants";
+
+
 
 import "./Footer.scss";
 import SocialMediaContact from "../../components/SocialMedia/SocialMediaContact";
+
+const SERVICE_ID = "service_o2v9cyr";
+const TEMPLATE_ID = "template_wqq3qy8";
+const USER_ID = "qR1P-sJW4CGQu08c3";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +20,14 @@ const Footer = () => {
     email: "",
     message: "",
   });
+
+  const [toSend, setToSend] = useState({
+    name: '',
+    to_name: 'Mayur',
+    message: '',
+    email: '',
+  });
+
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -21,11 +35,11 @@ const Footer = () => {
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value});
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     setLoading(true);
 
     const contact = {
@@ -42,6 +56,15 @@ const Footer = () => {
         setIsFormSubmitted(true);
       })
       .catch((err) => console.log(err));
+
+      e.preventDefault();
+      send(SERVICE_ID,TEMPLATE_ID,toSend,USER_ID)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        })
+        .catch((err) => {
+          console.log('FAILED...', err);
+        });
   };
 
   return (
