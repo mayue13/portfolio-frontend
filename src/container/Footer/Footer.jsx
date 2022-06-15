@@ -6,6 +6,7 @@ import { AppWrap, MotionWrap } from "../../wrapper/index";
 import { images } from "../../constants";
 
 import "./Footer.scss";
+import SocialMediaContact from "../../components/SocialMedia/SocialMediaContact";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -49,17 +50,8 @@ const Footer = () => {
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
-          <img src={images.email} />
-          <a href="mailto:mayurdahake13@gmail.com" className="p-text">
-            mayurdahake13@gmail
-          </a>
-        </div>
-        <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">
-            +1 (123) 456-7890
-          </a>
-        </div>
+         <SocialMediaContact/>
+        </div>        
       </div>
 
       {!isFormSubmitted?(
