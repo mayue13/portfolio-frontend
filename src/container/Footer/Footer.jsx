@@ -33,7 +33,7 @@ const Footer = () => {
   const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
-    const { name, value } = e.target;
+   // const { name, value } = e.target;
     setFormData({ ...formData, [e.target.name]: e.target.value});
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
