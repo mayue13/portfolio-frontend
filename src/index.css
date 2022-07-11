@@ -10,6 +10,7 @@
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+  --span-color:#2fc141;
 }
 
 * {
@@ -17,4 +18,8 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+}
+
+.span-color {
+   color: #313bac;
 }
