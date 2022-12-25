@@ -36,7 +36,7 @@ function Header() {
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Software Developer</p>
+            <p className="p-text">Solution Engineer</p>
             <p className="p-text">FullStack Developer</p>
           </div>
         </div>
