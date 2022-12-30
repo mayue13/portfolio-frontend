@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ReactTooltip from "react-tooltip";
+import { format }  from "date-fns";
 
 import "./Skills.scss";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
@@ -57,7 +58,7 @@ function Skills() {
               key={experience.year}
             >
               <div className="app__skills-exp-year">
-                 <p className="bold-text">{experience.year}</p>
+                 <p className="bold-text">{experience.company}</p>
               </div>
 
               <motion.div className="app__skills-exp-works">
@@ -72,7 +73,7 @@ function Skills() {
                       key={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <p className="p-text">{work.joiningDate} - {work.releaseDate}</p>
                     </motion.div>
                     {/* <ReactTooltip
                       id={work.name}
