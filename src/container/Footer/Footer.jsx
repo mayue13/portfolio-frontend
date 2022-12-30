@@ -9,7 +9,7 @@ import { AppWrap, MotionWrap } from "../../wrapper/index";
 import "./Footer.scss";
 import SocialMediaContact from "../../components/SocialMedia/SocialMediaContact";
 
-const SERVICE_ID = "service_o2v9cyr";
+const SERVICE_ID = "service_kb4j8jp";
 const TEMPLATE_ID = "template_wqq3qy8";
 const USER_ID = "qR1P-sJW4CGQu08c3";
 
