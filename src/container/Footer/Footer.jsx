@@ -5,7 +5,6 @@ import {  client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
 
 
-
 import "./Footer.scss";
 import SocialMediaContact from "../../components/SocialMedia/SocialMediaContact";
 
@@ -37,6 +36,7 @@ const Footer = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value});
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
+
 
   const handleSubmit = (e) => {
     setLoading(true);
@@ -86,7 +86,9 @@ const Footer = () => {
             name="name"
             value={name}
             onChange={handleChangeInput}
+           
           />
+          
         </div>
         <div className="app__flex">
           <input
@@ -96,6 +98,7 @@ const Footer = () => {
             name="email"
             value={email}
             onChange={handleChangeInput}
+            
           />
         </div>
         <div>
