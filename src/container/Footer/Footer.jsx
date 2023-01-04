@@ -12,6 +12,12 @@ const SERVICE_ID = "service_kb4j8jp";
 const TEMPLATE_ID = "template_wqq3qy8";
 const USER_ID = "qR1P-sJW4CGQu08c3";
 
+const {
+  FormWithConstraints,
+  FieldFeedbacks,
+  FieldFeedback
+} = ReactFormWithConstraints;
+
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -86,9 +92,11 @@ const Footer = () => {
             name="name"
             value={name}
             onChange={handleChangeInput}
-           
+            required
           />
-          
+          <FieldFeedbacks for="name">
+            <FieldFeedback when="*" />
+          </FieldFeedbacks>
         </div>
         <div className="app__flex">
           <input
@@ -98,8 +106,11 @@ const Footer = () => {
             name="email"
             value={email}
             onChange={handleChangeInput}
-            
+            required
           />
+          <FieldFeedbacks for="email">
+            <FieldFeedback when="*" />
+          </FieldFeedbacks>
         </div>
         <div>
           <textarea
@@ -108,6 +119,7 @@ const Footer = () => {
             value={message}
             name="message"
             onChange={handleChangeInput}
+            required
           />
         </div>
         <button className="p-text" type="button" onClick={handleSubmit}>
