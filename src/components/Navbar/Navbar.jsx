@@ -20,7 +20,7 @@ export default function Navbar() {
               <div />
               <a href={`#${item}`}>{item}</a>
             </li>
-          )
+          ),
         )}
       </ul>
 
@@ -39,7 +39,7 @@ export default function Navbar() {
                 "work",
                 "skills",
                 "testimonials",
-                "contact"
+                "contact",
               ].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggel(false)}>

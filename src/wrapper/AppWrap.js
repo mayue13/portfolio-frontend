@@ -13,9 +13,8 @@ const AppWrap = (Component, idName, classNames) =>
           <div className="copyright">
             <p className="p-text">@{new Date().getFullYear()} ExploreMD</p>
           </div>
-
         </div>
-         <NavigationDots active={idName}/>
+        <NavigationDots active={idName} />
       </div>
     );
   };

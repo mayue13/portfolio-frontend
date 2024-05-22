@@ -62,13 +62,13 @@ function Skills() {
       (years_passed == 1
         ? years_passed + " " + yrsTxt[0] + " "
         : years_passed > 1
-        ? years_passed + " " + yrsTxt[1] + " "
-        : "") +
+          ? years_passed + " " + yrsTxt[1] + " "
+          : "") +
       (months_passed == 1
         ? months_passed + " " + mnthsTxt[0]
         : months_passed > 1
-        ? months_passed + " " + mnthsTxt[1] + " "
-        : "");
+          ? months_passed + " " + mnthsTxt[1] + " "
+          : "");
 
     return result;
   };
@@ -120,8 +120,10 @@ function Skills() {
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">
-                        {monthYear(work.joiningDate)} - {monthYear(work.releaseDate)} | {workExperince(work.joiningDate,work.releaseDate)}
-                      </p>                      
+                        {monthYear(work.joiningDate)} -{" "}
+                        {monthYear(work.releaseDate)} |{" "}
+                        {workExperince(work.joiningDate, work.releaseDate)}
+                      </p>
                     </motion.div>
                     {/* <ReactTooltip
                       id={work.name}
@@ -147,5 +149,5 @@ function Skills() {
 export default AppWrap(
   MotionWrap(Skills, "app__skills"),
   "skills",
-  "app__whitebg"
+  "app__whitebg",
 );

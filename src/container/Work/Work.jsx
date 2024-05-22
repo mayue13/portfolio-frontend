@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { AiFillEye, AiFillGithub } from "react-icons/ai";
 
-import "./Work.scss";
+import { client, urlFor } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
-import { urlFor, client } from "../../client";
+import "./Work.scss";
 
 function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -22,16 +22,15 @@ function Work() {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard([{y:100,opacity:0}]);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
     setTimeout(() => {
-      setAnimateCard([{y:0,opacity:1}]);
+      setAnimateCard([{ y: 0, opacity: 1 }]);
 
-      if (item==='All') {
+      if (item === "All") {
         setFilterWork(works);
-      }
-      else{
-        setFilterWork(works.filter((work) => work.tags.includes(item)))
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -43,7 +42,7 @@ function Work() {
       </h2>
 
       <div className="app__work-filter">
-        {["Web App", "HTML/CSS", "React JS",".Net Core", "All"].map(
+        {["Web App", "HTML/CSS", "React JS", ".Net Core", "All"].map(
           (item, index) => (
             <div
               key={index}
@@ -54,7 +53,7 @@ function Work() {
             >
               {item}
             </div>
-          )
+          ),
         )}
       </div>
 
@@ -102,14 +101,14 @@ function Work() {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
-                <p className="p-text" style={{marginTop:10}}>{work.description}</p>
+              <p className="p-text" style={{ marginTop: 10 }}>
+                {work.description}
+              </p>
 
-
-                <div className="app__work-tag app__flex">
-                  <p className="p-text">{work.tags[0]}</p>
-                </div>
+              <div className="app__work-tag app__flex">
+                <p className="p-text">{work.tags[0]}</p>
+              </div>
             </div>
-
           </div>
         ))}
       </motion.div>
@@ -120,7 +119,7 @@ function Work() {
 //export default AppWrap(Work,'work')
 
 export default AppWrap(
-  MotionWrap(Work,'app__works'),
-  'work',
-  "app__primarybg"
-  ); 
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg",
+);
