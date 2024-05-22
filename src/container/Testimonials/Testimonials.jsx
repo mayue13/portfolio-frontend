@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
-import {BsLinkedin} from 'react-icons/bs';
+import { BsLinkedin } from "react-icons/bs";
 
 import { urlFor, client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
@@ -44,9 +44,17 @@ function Testimonials() {
             <div className="app__testimonial-content">
               <p className="p-text">{testMo.feedback}</p>
               <div>
-                <h4 className="bold-text"> {testMo.name} &nbsp;&nbsp;
+                <h4 className="bold-text">
+                  {" "}
+                  {testMo.name} &nbsp;&nbsp;
                   <span>
-                  <a href={testMo.linkedInUrl} target="_blank" rel="noopener noreferrer"><BsLinkedin/></a>            
+                    <a
+                      href={testMo.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <BsLinkedin />
+                    </a>
                   </span>
                 </h4>
                 <h5 className="p-text">
@@ -64,7 +72,7 @@ function Testimonials() {
                 handleClick(
                   currentIndex === 0
                     ? testimonials.length - 1
-                    : currentIndex - 1
+                    : currentIndex - 1,
                 )
               }
             >
@@ -77,7 +85,7 @@ function Testimonials() {
                 handleClick(
                   currentIndex === testimonials.length - 1
                     ? 0
-                    : currentIndex + 1
+                    : currentIndex + 1,
                 )
               }
             >
@@ -107,5 +115,5 @@ function Testimonials() {
 export default AppWrap(
   MotionWrap(Testimonials, "app__testimonial"),
   "testimonials",
-  "app__primarybg"
+  "app__primarybg",
 );
